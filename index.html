@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Herbapure - Ayurveda Wellness</title>
+    <title>Herbapure</title>
     <link rel="stylesheet" href="assests/css/styles.css">
     <script defer src="assests/js/script.js"></script>
 </head>
@@ -20,12 +20,12 @@
             <!-- Navigation Menu -->
             <nav>
                 <ul class="nav-links">
-                    <li><a href="#" class="magnifying-glass">⌕ Search</a></li>
                     <li><a href="#">Home</a></li>
                     <li><a href="#">About Us</a></li>
                     <li><a href="#">Products</a></li>
                     <li><a href="#">Ayurveda & Wellness</a></li>
                     <li><a href="#">Contact Us</a></li>
+                    <li><a href="#" class="magnifying-glass">⌕ Search</a></li>
                     <li><a href="#" class="cart">🛒 Cart</a></li>
                 </ul>
             </nav>
@@ -52,7 +52,7 @@
     <section class="hero">
         <div class="slideshow">
             <div class="slide fade active">
-                <img src="images/herbal1.webp" alt="Natural Herbs">
+                <img src="images/herbal1.png" alt="Natural Herbs">
                 <div class="overlay">
                     <h1>Embrace Nature, Heal Naturally</h1>
                     <p>Experience the power of Ayurveda with 100% natural ingredients.</p>
@@ -60,13 +60,21 @@
                 </div>
             </div>
             <div class="slide fade">
-                <img src="images/herbal2.webp" alt="Ayurvedic Products">
+                <img src="images/herbal2.jpg" alt="Ayurvedic Products">
                 <div class="overlay">
                     <h1>Pure Herbal Goodness</h1>
                     <p>Ayurveda for a healthier, balanced life.</p>
                     <a href="#" class="btn">Explore Ayurveda</a>
                 </div>
             </div>
+        </div>
+        
+        <!-- Overlay Images -->
+        <div class="overlay-images">
+            <img src="images/claim-icons1-03.png" alt="Leaf">
+            <img src="images/claim-icons-02.png" alt="Spices">
+            <img src="images/claim-icons-01.png" alt="Spices">
+            <img src="images/claim-icons-04.png" alt="Spices">
         </div>
     </section>
 
@@ -112,6 +120,7 @@
 
 </body>
 </html>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -228,6 +237,21 @@
     <script defer src="assests/js/script.js"></script>
 </head>
 <body>
+    <section class="certification">
+        <h2>Our Certifications</h2>
+        <div class="certificates">
+            <img src="images/claim-icons1-03.png" alt="Certificate 1" class="certificate-img">
+            <img src="images/claim-icons-02.png" alt="Certificate 2" class="certificate-img">
+            <img src="images/claim-icons-01.png" alt="Certificate 3" class="certificate-img">
+            <img src="images/claim-icons-04.png" alt="Certificate 3" class="certificate-img">
+        </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox">
+        <span class="close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+    </div>
 
     <!-- Customer Testimonials Section -->
     <section class="testimonials-section">
@@ -360,7 +384,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Herbapure Footer</title>
-        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="assests/css/styles.css">
         <script defer src="script.js"></script>
         <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     </head>
@@ -403,16 +427,14 @@
                             <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
                             <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
                             <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
-                        </div>                    
+                        </div>  
                     </div>
                 </div>
-    
-                <!-- Copyright & Scroll to Top -->
-                <div class="footer-bottom">
-                    <p>&copy; 2025 Herbapure. All Rights Reserved.</p>
-                    <button id="scrollToTop"><i class="fas fa-arrow-up"></i></button>
-                </div>
             </div>
+            <!-- Copyright & Scroll to Top -->
+    <div class="footer-bottom">
+        <p>&copy; 2025 Herbapure. All Rights Reserved.</p>
+    </div>
         </footer>
     
     </body>
