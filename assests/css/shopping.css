@@ -1,0 +1,175 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;600&display=swap');
+
+/* Global Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #ffffff;
+    overflow-x: hidden;
+    
+}
+
+/* Header Section */
+.header {
+    position:relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display:flex;
+
+    
+    justify-content: center;
+    align-items: center;
+    padding: 15px 50px;
+    background-color: none; /* Light Green Background */
+}
+
+/* Logo Styling */
+.logo img {
+    width: 250px; /* Adjust logo size */
+    height: auto;
+}
+
+/* Navigation Bar */
+.nav-links a {
+    text-decoration: none;
+    color: black; /* Green */
+    font-weight: 500;
+    margin: 0 15px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #1B5E20; /* Darker Green */
+}
+
+/* Icons Section */
+.icons {
+    display: flex;
+    align-items: center;
+}
+
+.cart-icon, .login-btn {
+    text-decoration: none;
+    color: #2E7D32;
+    font-weight: bold;
+    margin-left: 15px;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 5px 10px;
+    background-color: none; /* Very Light Green */
+    color: #2E7D32;
+}
+
+.hero h1 {
+    font-size: 36px;
+    font-family: 'Playfair Display', serif;
+}
+
+.hero p {
+    font-size: 18px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header {
+        padding: 15px 20px;
+    }
+
+    .nav-links {
+        display: none; /* Hide navigation for mobile (optional) */
+    }
+
+    .logo img {
+        width: 120px; /* Reduce logo size for smaller screens */
+    }
+}
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* Global Styles */
+body {
+    margin: 0;
+    padding: 0;
+    overflow:auto;
+    font-family: 'Poppins', sans-serif;
+    background-color: #ffffff;
+    overflow-x: hidden;
+}
+
+/* Main Container */
+.container {
+    width: 90%;
+    margin: auto;
+    padding: 20px 0;
+    overflow-x: hidden;
+}
+
+/* Section Headings */
+h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+/* Product Grid */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    max-width: 100%;
+    padding: 10px;
+    box-sizing: border-box;  /* Ensures padding doesn't cause overflow */
+}
+
+/* Product Card */
+.product-card {
+    border: 1px solid #ddd;
+    padding: 15px;
+    text-align: center;
+    background-color: #ffffff;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.product-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.product-card h3 {
+    font-size: 18px;
+    color: #333;
+}
+
+.product-card p {
+    font-size: 14px;
+    color: #666;
+}
+
+.product-card .price {
+    font-weight: bold;
+    color: #2E7D32;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+        padding: 0 10px;
+    }
+}
+
