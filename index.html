@@ -21,12 +21,12 @@
             <nav>
                 <ul class="nav-links">
                     <li><a href="#">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="#" data-target=".about-section">About Us</a></li>
                     <li><a href="shopping.html">Products</a></li>
-                    <li><a href="#">Ayurveda & Wellness</a></li>
-                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="#" data-target=".blog-section">Ayurveda & Wellness</a></li>
+                    <li><a href="#" data-target=".footer-contact">Contact Us</a></li>
                     <li><a href="#" class="magnifying-glass">⌕ Search</a></li>
-                    <li><a href="#" class="cart">🛒 Cart</a></li>
+                    <li><a href="order.html" class="cart">🛒 Cart</a></li>
                 </ul>
             </nav>
         
@@ -142,42 +142,93 @@
             <div class="product fade-in">
                 <img src="images/product1.webp" alt="Herbal Tea">
                 <h3>Herbal Detox Tea</h3>
-                <p>A refreshing blend of natural herbs that cleanse, boost immunity, and promote overall wellness. Made with **100% natural ingredients**, including green tea, tulsi, ginger, and lemon peel, this soothing tea helps detoxify your body while enhancing metabolism and digestion. Enjoy a cup daily for a rejuvenating and healthy lifestyle! 🌿☕✨</p>
-                <p class="price">₹499</p>
-                <a href="#" class="btn">Buy Now</a>
+                <p>A refreshing blend of natural herbs that cleanse and boost immunity.</p>
+                <p>Price: ₹499</p>
+                <button class="add-to-cart" data-name="Herbal Detox Tea" data-price="499">Add to Cart</button>
             </div>
 
             <!-- Product 2 -->
             <div class="product fade-in">
                 <img src="images/product2.webp" alt="Ayurvedic Oil">
                 <h3>Ayurvedic Hair Oil</h3>
-                <p>HerbaPure Ayurvedic Hair Oil – A nourishing blend of 100% natural herbs and essential oils that strengthens hair, reduces hair fall, and promotes healthy growth. Infused with Ayurvedic ingredients like amla, bhringraj, coconut oil, and hibiscus, this oil deeply conditions the scalp, prevents dandruff, and enhances shine. Experience the power of Ayurveda for strong, lustrous hair! 🌿💆‍♀️✨</p>
-                <p class="price">₹349</p>
-                <a href="#" class="btn">Buy Now</a>
+                <p>Nourishing hair oil with natural herbs for healthy hair growth.</p>
+                <p>Price: ₹599</p>
+                <button class="add-to-cart" data-name="Ayurvedic Hair Oil" data-price="599">Add to Cart</button>
             </div>
 
             <!-- Product 3 -->
             <div class="product fade-in">
                 <img src="images/product3.webp" alt="Organic Face Pack">
                 <h3>Organic Face Pack</h3>
-                <p>HerbaPure Organic Face Pack – A 100% natural skincare solution enriched with turmeric, sandalwood, aloe vera, and clay to brighten, cleanse, and rejuvenate your skin. This herbal blend removes impurities, controls excess oil, and enhances your natural glow, leaving your skin fresh and radiant. Pamper yourself with the goodness of Ayurveda for a healthy, glowing complexion! 🌿✨💆‍♀️</p>
-                <p class="price">₹299</p>
-                <a href="#" class="btn">Buy Now</a>
+                <p>Herbal face pack for a glowing and clear complexion.</p>
+                <p>Price: ₹559</p>
+                <button class="add-to-cart" data-name="Organic Face Pack" data-price="559">Add to Cart</button>
             </div>
 
             <!-- Product 4 -->
             <div class="product fade-in">
                 <img src="images/product4.webp" alt="Immunity Booster">
                 <h3>Natural Immunity Booster</h3>
-                <p>HerbaPure Natural Immunity Booster – A powerful blend of 100% natural herbs like turmeric, ginger, amla, and honey to strengthen immunity, fight fatigue, and promote overall well-being. Rich in antioxidants and essential nutrients, this Ayurvedic formula helps protect your body naturally. Stay healthy and energized with every dose! 🌿🛡️✨</p>
-                <p class="price">₹599</p>
-                <a href="#" class="btn">Buy Now</a>
+                <p>Powerful immunity booster with turmeric, ginger, and amla.</p>
+                <p>Price: ₹599</p>
+                <button class="add-to-cart" data-name="Natural Immunity Booster" data-price="599">Add to Cart</button>
+            </div>
+
+            <!-- Product 5 -->
+            <div class="product fade-in">
+                <img src="images/product4.webp" alt="Immunity Booster">
+                <h3>Natural Immunity Booster</h3>
+                <p>Powerful immunity booster with turmeric, ginger, and amla.</p>
+                <p>Price: ₹599</p>
+                <button class="add-to-cart" data-name="Natural Immunity Booster" data-price="599">Add to Cart</button>
+            </div>
+
+            <!-- Product 6 -->
+            <div class="product fade-in">
+                <img src="images/product4.webp" alt="Immunity Booster">
+                <h3>Natural Immunity Booster</h3>
+                <p>Powerful immunity booster with turmeric, ginger, and amla.</p>
+                <p>Price: ₹599</p>
+                <button class="add-to-cart" data-name="Natural Immunity Booster" data-price="599">Add to Cart</button>
+            </div>
+
+            <!-- Product 7 -->
+            <div class="product fade-in">
+                <img src="images/product4.webp" alt="Immunity Booster">
+                <h3>Natural Immunity Booster</h3>
+                <p>Powerful immunity booster with turmeric, ginger, and amla.</p>
+                <p>Price: ₹599</p>
+                <button class="add-to-cart" data-name="Natural Immunity Booster" data-price="599">Add to Cart</button>
+            </div>
+
+            <!-- Product 8 -->
+            <div class="product fade-in">
+                <img src="images/product4.webp" alt="Immunity Booster">
+                <h3>Natural Immunity Booster</h3>
+                <p>Powerful immunity booster with turmeric, ginger, and amla.</p>
+                <p>Price: ₹599</p>
+                <button class="add-to-cart" data-name="Natural Immunity Booster" data-price="599">Add to Cart</button>
             </div>
         </div>
     </section>
 
+    <!-- Transparent Slide-in Cart -->
+    <div id="cart-sidebar">
+        <div class="cart-header">
+            <h2>Shopping Cart</h2>
+            <button id="close-cart">✖</button>
+        </div>
+        <div id="cart-items"></div>
+        <div class="cart-footer">
+            <h3>Total: ₹<span id="cart-total">0</span></h3>
+            <button id="checkout">Checkout</button>
+        </div>
+    </div>
+
 </body>
 </html>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
