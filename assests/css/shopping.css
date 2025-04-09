@@ -55,48 +55,40 @@
   font-size: 18px;
 }
 
-/* Hamburger icon */
-.hamburger {
+
+/* Menu Toggle for Mobile */
+.menu-toggle {
   display: none;
-  font-size: 26px;
+  font-size: 20px;
   cursor: pointer;
+  color: white;
 }
 
-/* Mobile Responsive */
+/* Responsive Design */
 @media (max-width: 768px) {
-  .header {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 15px 20px;
-  }
-
   .nav-links {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    margin-top: 10px;
-    border-top: 1px solid #ccc;
-    padding-top: 10px;
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      right: 10px;
+      background: rgba(0, 0, 0, 0.7);
+      box-shadow: none;
+      width: 220px;
+      text-align: center;
+      border-radius: 5px;
   }
 
-  .nav-links.show {
-    display: flex;
+  .nav-links.active {
+      display: flex;
   }
 
-  .nav-links a {
-    margin: 10px 0;
-    text-align: center;
-    width: 100%;
+  .nav-links li {
+      margin: 10px 0;
   }
 
-  .icons {
-    width: 100%;
-    justify-content: space-between;
-  }
-
-  .hamburger {
-    display: block;
-    margin-left: auto;
+  .menu-toggle {
+      display: block;
   }
 }
 

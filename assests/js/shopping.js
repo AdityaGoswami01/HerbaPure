@@ -1,3 +1,51 @@
+
+// Sticky Navbar on Scroll
+window.addEventListener("scroll", function () {
+  const navbar = document.querySelector(".navbar");
+  if (window.scrollY > 50) {
+      navbar.classList.add("scrolled");
+  } else {
+      navbar.classList.remove("scrolled");
+  }
+});
+
+// Mobile Menu Toggle
+document.addEventListener("DOMContentLoaded", () => {
+  const menuToggle = document.querySelector(".menu-toggle");
+  const navLinks = document.querySelector(".nav-links");
+  
+  if (menuToggle && navLinks) {
+      menuToggle.addEventListener("click", () => {
+          navLinks.classList.toggle("active");
+      });
+  }
+});
+
+// Automatic Slideshow
+let slideIndex = 0;
+function showSlides() {
+  const slides = document.querySelectorAll(".slide");
+  slides.forEach(slide => slide.classList.remove("active"));
+  slideIndex = (slideIndex + 1) % slides.length;
+  slides[slideIndex].classList.add("active");
+  setTimeout(showSlides, 4000);
+}
+document.addEventListener("DOMContentLoaded", showSlides);
+
+// Scroll Animation
+document.addEventListener("DOMContentLoaded", () => {
+  const fadeElements = document.querySelectorAll(".fade-in");
+  function fadeInOnScroll() {
+      fadeElements.forEach(element => {
+          if (element.getBoundingClientRect().top < window.innerHeight - 100) {
+              element.classList.add("show");
+          }
+      });
+  }
+  window.addEventListener("scroll", fadeInOnScroll);
+  fadeInOnScroll();
+});
+
 document.addEventListener("DOMContentLoaded", () => {
     const cartSidebar = document.getElementById("cart-sidebar");
     const closeCartBtn = document.getElementById("close-cart");
@@ -103,17 +151,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   
     updateCart();
-  });
-
-  document.addEventListener('DOMContentLoaded', function () {
-    const hamburger = document.getElementById('hamburger');
-    const navLinks = document.getElementById('navLinks');
-  
-    if (hamburger && navLinks) {
-      hamburger.addEventListener('click', function () {
-        navLinks.classList.toggle('show');
-      });
-    }
   });
 
 
