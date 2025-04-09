@@ -28,6 +28,15 @@ document.addEventListener("DOMContentLoaded", () => {
         cartSidebar.classList.add("active");
       });
     });
+    
+    document.addEventListener("DOMContentLoaded", function () {
+  const hamburger = document.getElementById("hamburger");
+  const navLinks = document.getElementById("navLinks");
+
+  hamburger.addEventListener("click", function () {
+    navLinks.classList.toggle("show");
+  });
+});
   
     function addToCart(name, price) {
       const existingItem = cart.find(item => item.name === name);
@@ -104,9 +113,6 @@ document.addEventListener("DOMContentLoaded", () => {
   
     updateCart();
   });
-  
-  document.getElementById("hamburger").addEventListener("click", function () {
-    document.querySelector(".nav-links").classList.toggle("show");
-  });
+
 
   
