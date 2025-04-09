@@ -1,67 +1,204 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Herbapure</title>
-    <link rel="stylesheet" href="assests/css/shopping.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Herbapure - Ayurvedic Products</title>
+  <link rel="stylesheet" href="assests/css/shopping.css" />
 </head>
 <body>
-
-    <!-- Header Section -->
-    <header class="header">
-        <div class="logo">
-            <img src="images/logo.png" alt="Herbapure Logo">  <!-- Add your logo image -->
-        </div>
-       
-        <nav class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="shopping.html">Products</a>  <!-- Link to shopping page -->
-            <a href="about.html">About</a>
-            <a href="contact.html">Contact</a>
-            <a href="cart.html">🛒 Cart </a>
-        </nav>
-        
-    </header>
-
-    <!-- Hero Section Placeholder -->
-    <section class="hero">
-        <h1>Welcome to Herbapure</h1>
-        <p>Natural Ayurvedic Products for a Healthy Life</p>
-    </section>
-
-    <script src="script.js"></script>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Herbapure - Shop</title>
-    <link rel="stylesheet" href="assests/css/shopping.css">
-</head>
-<body>
-
-    <div class="container">
-        <!-- Featured Products Section -->
-        <section class="featured-products">
-            <h2>Featured Products</h2>
-            <div class="product-grid" id="featured-list">
-                <!-- Featured products will be added dynamically -->
-            </div>
-        </section>
-
-        <!-- Main Product Listing Section -->
-        <section class="product-section">
-            <h2>All Products</h2>
-            <div class="product-grid" id="product-list">
-                <!-- Products will be added dynamically -->
-            </div>
-        </section>
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">
+      <img src="images/logo.png" alt="Herbapure Logo" />
     </div>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="#">Products</a>
+      <a href="index.html">About</a>
+    </nav>
+    <div class="icons">
+      <a href="#" id="cart-icon">🛒</a>
+    </div>
+  </header>
 
-    <script src="assests/js/shopping.js"></script>
+  <!-- Products Section -->
+  <section class="products-section">
+    <h2 class="section-title">Our Ayurvedic Products</h2>
+    <p class="section-subtitle">100% Natural and Herbal Remedies</p>
+
+    <div class="products-grid">
+      <div class="product">
+        <img src="images/P1.png" alt="HerbaFlex" />
+        <h3>HerbaFlex</h3>
+                <p>🟢 Product Name: HerbaFlex</p>
+                    <p>🌿A powerful Ayurvedic supplement crafted to support joint flexibility and mobility. Ideal for those seeking natural relief from stiffness and discomfort.</p>
+        <div class="price">₹2999</div>
+        <button class="btn add-to-cart" data-name="HerbaFlex" data-price="2999">Add to Cart</button>
+      </div>
+
+      <div class="product">
+        <img src="images/P2.png" alt="JointEase Oil" />
+        <h3>JointEase Oil</h3>
+                <p>🟢 Product Name: JointEase Oil</p>
+                   <p> 🌿A soothing herbal oil blend that penetrates deep into joints to ease pain and inflammation. Perfect for daily massage and long-term joint health.</p>
+        <div class="price">₹1999</div>
+        <button class="btn add-to-cart" data-name="JointEase Oil" data-price="1999">Add to Cart</button>
+      </div>
+
+      <div class="product">
+        <img src="images/P3.png" alt="Ashwagandha" />
+        <h3>ArthoHerb</h3>
+        <p>🟢 Product Name: ArthoHerb</p>
+                <p>🌿An all-natural formula designed to strengthen bones and soothe arthritic pain. ArthoHerb supports healthy joints with time-tested Ayurvedic herbs.</p>
+        <div class="price">₹2999</div>
+        <button class="btn add-to-cart" data-name="ArthoHerb" data-price="2999">Add to Cart</button>
+      </div>
+
+      <div class="product">
+        <img src="images/P4.png" alt="FlexiHerb Oil" />
+        <h3>FlexiHerb Oil</h3>
+                <p>🟢 Product Name: FlexiHerb Oil</p>
+                <p>🌿This warming oil promotes flexibility and comfort in joints and muscles. Infused with potent herbs for a rejuvenating massage experience.</p>
+        <div class="price">₹2999</div>
+        <button class="btn add-to-cart" data-name="FlexiHerb Oil" data-price="2999">Add to Cart</button>
+      </div>
+
+      <div class="product">
+        <img src="images/P5.png" alt="PainRelief Naturals" />
+        <h3>PainRelief Naturals</h3>
+                <p>🟢 Product Name: PainRelief Naturals</p>
+                <p>🌿A gentle yet effective herbal remedy to alleviate body aches, muscle soreness, and joint pain—without side effects. Embrace natural healing.</p>
+        <div class="price">₹2999</div>
+        <button class="btn add-to-cart" data-name="PainRelief Naturals" data-price="2999">Add to Cart</button>
+      </div>
+
+      <div class="product">
+        <img src="images/P6.png" alt="HerbaSlim" />
+        <h3>HerbaSlim</h3>
+                <p>🟢 Product Name: HerbaSlim</p>
+                <p>🌿A holistic Ayurvedic solution to support healthy weight management, boost metabolism, and reduce cravings—naturally and effectively.</p>
+        <div class="price">₹2999</div>
+        <button class="btn add-to-cart" data-name="HerbaSlim" data-price="2999">Add to Cart</button>
+      </div>
+
+      <div class="product">
+        <img src="images/P7.png" alt="FatBurner+" />
+        <h3>FatBurner+</h3>
+                <p>🟢 Product Name: FatBurner+</p>
+                <p>🌿An energizing herbal blend that promotes fat metabolism and supports an active lifestyle. Great for those on their fitness journey.</p>
+        <div class="price">₹2999</div>
+        <button class="btn add-to-cart" data-name="FatBurner+" data-price="2999">Add to Cart</button>
+      </div>
+
+      <div class="product">
+        <img src="images/P8.png" alt="SlimEase" />
+        <h3>SlimEase</h3>
+                <p>🟢 Product Name: SlimEase</p>
+                <p>🌿This gentle yet effective formula aids digestion, boosts metabolism, and supports natural weight loss. Feel lighter, naturally.</p>
+        <div class="price">₹2999</div>
+        <button class="btn add-to-cart" data-name="SlimEase" data-price="2999">Add to Cart</button>
+      </div>
+
+      <div class="product">
+        <img src="images/P3.png" alt="Ashwagandha" />
+        <h3>ArthoHerb</h3>
+        <div class="price">₹2999</div>
+        <button class="btn add-to-cart" data-name="ArthoHerb" data-price="2999">Add to Cart</button>
+      </div>
+
+      <div class="product">
+        <img src="images/P3.png" alt="Ashwagandha" />
+        <h3>ArthoHerb</h3>
+        <div class="price">₹2999</div>
+        <button class="btn add-to-cart" data-name="ArthoHerb" data-price="2999">Add to Cart</button>
+      </div>
+
+      <div class="product">
+        <img src="images/P3.png" alt="Ashwagandha" />
+        <h3>ArthoHerb</h3>
+        <div class="price">₹2999</div>
+        <button class="btn add-to-cart" data-name="ArthoHerb" data-price="2999">Add to Cart</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cart Sidebar -->
+  <div id="cart-sidebar">
+    <div class="cart-header">
+      <h3>Your Cart</h3>
+      <button id="close-cart">✖</button>
+    </div>
+    <div id="cart-items"></div>
+    <div class="cart-footer">
+      <p>Total: <span id="cart-total">₹0</span></p>
+      <button id="checkout">Checkout</button>
+    </div>
+  </div>
+
+  <script src="assests/js/shopping.js"></script>
 </body>
 </html>
 
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Herbapure Footer</title>
+        <link rel="stylesheet" href="assests/css/shopping.css">
+         <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <script defer src="assests/js/shopping.js"></script>
+        <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+    
+        <!-- Footer Section -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <!-- Logo & About -->
+                    <div class="footer-about">
+                        <img src="images/logo.png" alt="Herbapure Logo" class="footer-logo">
+                        <p>Embrace the power of Ayurveda with our 100% natural and authentic products.</p>
+                    </div>
+    
+                    <!-- Quick Links -->
+                    <div class="footer-links">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="shopping.html">Products</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+    
+                    <!-- Contact Information -->
+                    <div class="footer-contact">
+                        <h3>Contact Us</h3>
+                        <p>Email: <a href="mailto:support@herbapure.com">support@herbapure.com</a></p>
+                        <p>Phone: <a href="tel:+919876543210">+91 98765 43210</a></p>
+                        <p>Address: Mumbai, India</p>
+                    </div>
+    
+                    <!-- Social Media Links -->
+                    <div class="footer-social">
+                        <h3>Follow Us</h3>
+                        <div class="social-icons">
+                            <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                            <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+                        </div>  
+                    </div>
+                </div>
+            </div>
+            <!-- Copyright & Scroll to Top -->
+    <div class="footer-bottom">
+        <p>&copy; 2025 Herbapure. All Rights Reserved.</p>
+    </div>
+        </footer>
+    
+    </body>
+    </html>

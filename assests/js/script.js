@@ -133,13 +133,19 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
+    // ✅ Close Cart Sidebar
+    if (closeCartBtn) {
+        closeCartBtn.addEventListener("click", () => {
+            cartSidebar.classList.remove("active");
+        });
+    }
+
     // ✅ Checkout Button - Redirect to Order Page
     checkoutButton.addEventListener("click", () => {
         if (cart.length === 0) {
             alert("Your cart is empty!");
             return;
         }
-
         localStorage.setItem("cart", JSON.stringify(cart)); // Save cart to localStorage
         window.location.href = "order.html"; // Redirect to order page
     });
@@ -175,7 +181,45 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         cartTotal.innerText = `₹${total.toFixed(2)}`;
+
+        // Add event listeners for increase, decrease, and remove buttons
+        document.querySelectorAll(".increase-btn").forEach(btn => {
+            btn.addEventListener("click", () => {
+                const name = btn.dataset.name;
+                const item = cart.find(i => i.name === name);
+                if (item) item.quantity += 1;
+                updateCart();
+            });
+        });
+
+        document.querySelectorAll(".decrease-btn").forEach(btn => {
+            btn.addEventListener("click", () => {
+                const name = btn.dataset.name;
+                const item = cart.find(i => i.name === name);
+                if (item && item.quantity > 1) {
+                    item.quantity -= 1;
+                } else {
+                    cart = cart.filter(i => i.name !== name);
+                }
+                updateCart();
+            });
+        });
+
+        document.querySelectorAll(".remove-btn").forEach(btn => {
+            btn.addEventListener("click", () => {
+                const name = btn.dataset.name;
+                cart = cart.filter(i => i.name !== name);
+                updateCart();
+            });
+        });
+
+        
+        // Save cart to localStorage
+        localStorage.setItem("cart", JSON.stringify(cart));
     }
+
+    // Initial load
+    updateCart();
 });
 document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll('a[data-target]').forEach(anchor => {

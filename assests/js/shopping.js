@@ -1,43 +1,107 @@
-// Future JavaScript functionality (e.g., dropdown menu, mobile nav) can be added here.
-console.log("Header loaded successfully!");
-// Sample Product Data
-const products = [
-    { id: 1, name: "Herbal Oil", category: "oils", price: 1200, image: "images/product3.webp", featured: true },
-    { id: 2, name: "Ayurvedic Tea", category: "herbal-teas", price: 600, image: "images/product4.webp", featured: false },
-    { id: 3, name: "Skin Care Cream", category: "skin-care", price: 900, image: "images/product1.webp", featured: true },
-    { id: 4, name: "Health Supplement", category: "supplements", price: 2500, image: "supplement.jpg", featured: false },
-    { id: 5, name: "Detox Capsules", category: "supplements", price: 1800, image: "capsules.jpg", featured: true },
-    { id: 6, name: "Herbal Oil", category: "oils", price: 1200, image: "oil.jpg", featured: false },
-    { id: 7, name: "Ayurvedic Tea", category: "herbal-teas", price: 600, image: "tea.jpg", featured: false },
-    { id: 8, name: "Skin Care Cream", category: "skin-care", price: 900, image: "cream.jpg", featured: false },
-    { id: 9, name: "Health Supplement", category: "supplements", price: 2500, image: "supplement.jpg", featured: false },
-    { id: 10, name: "Detox Capsules", category: "supplements", price: 1800, image: "capsules.jpg", featured: false },
-    { id: 11, name: "Herbal Oil", category: "oils", price: 1200, image: "oil.jpg", featured: false },
-    { id: 12, name: "Ayurvedic Tea", category: "herbal-teas", price: 600, image: "tea.jpg", featured: false },
-    { id: 13, name: "Skin Care Cream", category: "skin-care", price: 900, image: "cream.jpg", featured: false },
-    { id: 14, name: "Health Supplement", category: "supplements", price: 2500, image: "supplement.jpg", featured: false },
-    { id: 15, name: "Detox Capsules", category: "supplements", price: 1800, image: "capsules.jpg", featured: false }
-];
-
-// Function to Display Products
-const displayProducts = (filteredProducts, containerId) => {
-    const productList = document.getElementById(containerId);
-    productList.innerHTML = "";
-
-    filteredProducts.forEach(product => {
-        productList.innerHTML += `
-            <div class="product-card">
-                <img src="${product.image}" alt="${product.name}">
-                <h3>${product.name}</h3>
-                <p class="price">₹${product.price}</p>
-            </div>
-        `;
+document.addEventListener("DOMContentLoaded", () => {
+    const cartSidebar = document.getElementById("cart-sidebar");
+    const closeCartBtn = document.getElementById("close-cart");
+    const cartIcon = document.getElementById("cart-icon");
+    const addToCartButtons = document.querySelectorAll(".add-to-cart");
+    const cartItemsContainer = document.getElementById("cart-items");
+    const cartTotal = document.getElementById("cart-total");
+    const checkoutButton = document.getElementById("checkout");
+  
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  
+    // Open Cart
+    cartIcon.addEventListener("click", () => {
+      cartSidebar.classList.add("active");
     });
-};
-
-// Load All Products
-displayProducts(products, "product-list");
-
-// Load Featured Products
-const featuredProducts = products.filter(product => product.featured);
-displayProducts(featuredProducts, "featured-list");
+  
+    // Close Cart
+    closeCartBtn.addEventListener("click", () => {
+      cartSidebar.classList.remove("active");
+    });
+  
+    // Add to Cart
+    addToCartButtons.forEach(button => {
+      button.addEventListener("click", (e) => {
+        const name = button.dataset.name;
+        const price = parseFloat(button.dataset.price);
+        addToCart(name, price);
+        cartSidebar.classList.add("active");
+      });
+    });
+  
+    function addToCart(name, price) {
+      const existingItem = cart.find(item => item.name === name);
+      if (existingItem) {
+        existingItem.quantity++;
+      } else {
+        cart.push({ name, price, quantity: 1 });
+      }
+      updateCart();
+    }
+  
+    function updateCart() {
+      cartItemsContainer.innerHTML = "";
+      let total = 0;
+  
+      cart.forEach(item => {
+        total += item.price * item.quantity;
+        const cartItem = document.createElement("div");
+        cartItem.classList.add("cart-item");
+        cartItem.innerHTML = `
+          <span>${item.name} (₹${item.price})</span>
+          <div class="quantity-controls">
+            <button class="decrease-btn" data-name="${item.name}">-</button>
+            <span>${item.quantity}</span>
+            <button class="increase-btn" data-name="${item.name}">+</button>
+          </div>
+          <button class="remove-btn" data-name="${item.name}">✖</button>
+        `;
+        cartItemsContainer.appendChild(cartItem);
+      });
+  
+      cartTotal.innerText = `₹${total.toFixed(2)}`;
+      addCartListeners();
+      localStorage.setItem("cart", JSON.stringify(cart));
+    }
+  
+    function addCartListeners() {
+      document.querySelectorAll(".increase-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+          const item = cart.find(i => i.name === btn.dataset.name);
+          if (item) item.quantity++;
+          updateCart();
+        });
+      });
+  
+      document.querySelectorAll(".decrease-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+          const item = cart.find(i => i.name === btn.dataset.name);
+          if (item.quantity > 1) {
+            item.quantity--;
+          } else {
+            cart = cart.filter(i => i.name !== btn.dataset.name);
+          }
+          updateCart();
+        });
+      });
+  
+      document.querySelectorAll(".remove-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+          cart = cart.filter(i => i.name !== btn.dataset.name);
+          updateCart();
+        });
+      });
+    }
+  
+    checkoutButton.addEventListener("click", () => {
+      if (cart.length === 0) {
+        alert("Cart is empty!");
+        return;
+      }
+      localStorage.setItem("cart", JSON.stringify(cart));
+      window.location.href = "order.html";
+    });
+  
+    updateCart();
+  });
+  
