@@ -1,7 +1,7 @@
 
 // Sticky Navbar on Scroll
 window.addEventListener("scroll", function () {
-  const navbar = document.querySelector(".navbar");
+  const navbar = document.querySelector(".header");
   if (window.scrollY > 50) {
       navbar.classList.add("scrolled");
   } else {
@@ -19,31 +19,6 @@ document.addEventListener("DOMContentLoaded", () => {
           navLinks.classList.toggle("active");
       });
   }
-});
-
-// Automatic Slideshow
-let slideIndex = 0;
-function showSlides() {
-  const slides = document.querySelectorAll(".slide");
-  slides.forEach(slide => slide.classList.remove("active"));
-  slideIndex = (slideIndex + 1) % slides.length;
-  slides[slideIndex].classList.add("active");
-  setTimeout(showSlides, 4000);
-}
-document.addEventListener("DOMContentLoaded", showSlides);
-
-// Scroll Animation
-document.addEventListener("DOMContentLoaded", () => {
-  const fadeElements = document.querySelectorAll(".fade-in");
-  function fadeInOnScroll() {
-      fadeElements.forEach(element => {
-          if (element.getBoundingClientRect().top < window.innerHeight - 100) {
-              element.classList.add("show");
-          }
-      });
-  }
-  window.addEventListener("scroll", fadeInOnScroll);
-  fadeInOnScroll();
 });
 
 document.addEventListener("DOMContentLoaded", () => {

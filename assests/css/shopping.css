@@ -35,6 +35,11 @@
   transition: color 0.3s ease;
 }
 
+.nav-links {
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
 .nav-links a:hover {
   color: #1B5E20;
 }
@@ -48,7 +53,7 @@
 }
 
 /* Cart and login styles */
-.cart-icon {
+#cart-icon {
   text-decoration: none;
   color: #2E7D32;
   font-weight: bold;
@@ -83,7 +88,7 @@
       display: flex;
   }
 
-  .nav-links li {
+  .nav-links a {
       margin: 10px 0;
   }
 
