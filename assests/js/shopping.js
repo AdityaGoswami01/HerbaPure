@@ -1,4 +1,3 @@
-
 // Sticky Navbar on Scroll
 window.addEventListener("scroll", function () {
   const navbar = document.querySelector(".header");
@@ -127,6 +126,3 @@ document.addEventListener("DOMContentLoaded", () => {
   
     updateCart();
   });
-
-
-  
