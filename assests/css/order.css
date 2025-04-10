@@ -228,3 +228,24 @@ body {
         justify-content: center;
     }
 }
+.popup-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #28a745;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    z-index: 999;
+    text-align: center;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.popup-message strong {
+    display: block;
+    margin-top: 10px;
+}
+
