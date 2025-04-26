@@ -37,12 +37,109 @@
     position: relative;
     width: 100%;
     height: 100vh;
-    background: url('your-hero-image.jpg') no-repeat center center/cover;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
+    overflow: hidden;
+    background: none; /* ✅ Removed fixed background image */
+}
+
+/* Slideshow */
+.slideshow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1; /* ✅ Keeps image in the background */
+}
+
+/* Active Slide */
+.slide.active {
+    opacity: 1;
+}
+
+/* Overlay Text */
+.overlay {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    transform: translateY(-50%);
+    text-align: left;
+    color: black;
+    background: none;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 500px;
+
+    /* ✅ Fix for button clickability */
+    z-index: 2;
+    pointer-events: auto;
+}
+
+.overlay h1 {
+    font-size: 32px;
+    font-weight: bold;
+    color: #2E8B57; /* Green */
+}
+
+.overlay p {
+    font-size: 18px;
+    margin: 10px 0;
+    color: black;
+}
+
+/* Call-to-Action Button */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #2E8B57;
     color: white;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background: #1C6B43;
+}
+
+/* Overlay images */
+.overlay-images {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    display: flex;
+    gap: 20px;
+}
+
+.overlay-images img {
+    width: 120px;
+    height: auto;
+    border-radius: 0px;
+    box-shadow: 0 0px 0px rgba(0, 0, 0, 0.2);
 }
 
 /* Logo */
@@ -108,122 +205,26 @@
     .menu-toggle {
         display: block;
     }
-}
- 
-/* Hero Section */
-.hero {
-    width: 100%;
-    height: 100vh;
-    position: relative;
-    overflow: hidden;
-}
 
-/* Slideshow */
-.slideshow {
-    position: relative;
-    width: 100%;
-    height: 110%;
-}
-
-.slide {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-}
-
-.slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-/* Overlay images */
-        .overlay-images {
-            position: absolute;
-            bottom: 30px;
-            left: 30px;
-            display: flex;
-            gap: 20px;
-        }
-        .overlay-images img {
-            width: 120px;
-            height: auto;
-            border-radius: 0px;
-            box-shadow: 0 0px 0px rgba(0, 0, 0, 0.2);
-        }
-        .hero {
-            position: relative;
-            overflow: hidden;
-        }
-
-
-/* Active Slide */
-.slide.active {
-    opacity: 1;
-}
-
-/* Overlay Text */
-.overlay {
-    position: absolute;
-    top: 50%;
-    left: 20%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: black;
-    background: none;
-    padding: 30px;
-    border-radius: 10px;
-    max-width: 500px;
-}
-
-.overlay h1 {
-    font-size: 32px;
-    font-weight: bold;
-    color: #2E8B57; /* Green */
-}
-
-.overlay p {
-    font-size: 18px;
-    margin: 10px 0;
-    color: black;
-}
-
-/* Call-to-Action Button */
-.btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background: #2E8B57;
-    color: white;
-    text-decoration: none;
-    font-size: 16px;
-    border-radius: 5px;
-    transition: background 0.3s;
-}
-
-.btn:hover {
-    background: #1C6B43;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
     .overlay {
         width: 90%;
         padding: 20px;
     }
-    
+
     .overlay h1 {
         font-size: 24px;
     }
-    
+
     .overlay p {
         font-size: 16px;
     }
-    
+
     .btn {
         font-size: 14px;
     }
 }
+
+
 /* General Styles */
 body {
     font-family: 'Poppins', sans-serif;
