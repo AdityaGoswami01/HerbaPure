@@ -83,8 +83,8 @@
 /* Overlay Text */
 .overlay {
     position: absolute;
-    top: 50%;
-    left: 5%;
+    top: 35%;
+    left: 4%;
     transform: translateY(-50%);
     text-align: left;
     color: black;
